@@ -1,7 +1,6 @@
-var channelId = "";
+
 var videoIdArray = [];
-var videoIdItem;
-var videoIdItemArray = [];
+
 
 var tag = document.createElement("script");
 console.log(tag);
@@ -9,7 +8,7 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName("script")[0];
 console.log(firstScriptTag);
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-var player;
+
 console.log(player);
 
 $("button").on("click", function() {
@@ -25,7 +24,7 @@ $("button").on("click", function() {
       //console.log(result);
       //console.log(result.items);
 
-      result.items.forEach(function(element, i) {
+      result.items.forEach(function(element,) {
         console.log(element);
 
         console.log(element.id.videoId);
@@ -35,27 +34,25 @@ $("button").on("click", function() {
         console.log(videoIdArray);
       });
 
-      console.log(videoIdItemArray);
-
       function onYouTubeIframeAPIReady() {
         player = new YT.Player("player", {
           height: "290",
           width: "540",
           videoId: videoIdArray[0],
           events: {
-            onReady: onPlayerReady
-            
+            'onReady': onPlayerReady   
           }
+          
         });
       }
 
       function onYouTubeIframeAPIReady1() {
-        player = new YT.Player("player1", {
+        player1 = new YT.Player("player1", {
           height: "390",
           width: "640",
           videoId: videoIdArray[1],
           events: {
-            onReady: onPlayerReady
+            'onReady': onPlayerReady
             
           }
         });
